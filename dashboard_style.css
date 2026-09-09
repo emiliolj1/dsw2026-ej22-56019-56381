@@ -7,6 +7,8 @@
     "main"
     "footer";
   height: 100dvh;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
 }
 
 .dashboard-container nav {
@@ -30,9 +32,17 @@
   margin: 0;
 }
 
-.dashboard-container nav ul li {
+.dashboard-container nav ul li{
   padding: 1rem;
   border-bottom: 1px solid #ddd;
+  font-size: 1.2rem;
+}
+
+.dashboard-container nav ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+  display: block;
 }
 
 .dashboard-container header {
@@ -44,6 +54,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
+  font-size: large;
 }
 
 .dashboard-container header div {
@@ -56,6 +67,7 @@
   grid-area: main;
   padding: 1rem;
   overflow-y: auto;
+  font-size: 1.1rem;
 }
 
 .dashboard-container footer {
@@ -64,6 +76,16 @@
   color: white;
   text-align: center;
   padding: 1rem;
+  font-size: 0.9rem;
+}
+
+.logout-btn{
+  background-color: #333;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 600px) {
