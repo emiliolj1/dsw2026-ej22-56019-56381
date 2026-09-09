@@ -16,6 +16,12 @@
   width: 200px;
   background-color: #f4f4f4;
   left: -200px;
+  transition: left 0.3s ease;
+}
+
+.dashboard-container nav.open {
+  left: 0;
+  transition: left 0.3s ease-in-out;
 }
 
 .dashboard-container nav ul {
