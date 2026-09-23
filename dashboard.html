@@ -4,26 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Listado de Productos</title>
+
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="dashboard_style.css">
+
   <script src="dashboard.js"></script>
 </head>
+
 <body>
+
   <div class="dashboard-container">
+
     <header>
       <span>Gestor de turnos</span>
+
       <div>
         <button class="menu">&#9776;</button>
         <button id="logout">Cerrar Sesión</button>
       </div>
     </header>
+
     <nav id="sidebar">
       <ul>
-        <li><a href="#">Panel</a></li>
+        <li>
+          <a href="#">Panel</a>
+        </li>
       </ul>
     </nav>
+
     <main>
       <h1>Pacientes</h1>
+
       <table>
         <thead>
           <tr>
@@ -31,12 +42,18 @@
             <th>Paciente</th>
           </tr>
         </thead>
+
         <tbody id="product-table-body">
           <!-- Los productos se cargarán aquí dinámicamente -->
         </tbody>
       </table>
     </main>
-    <footer>Mi Aplicación &copy; 2024</footer>
+
+    <footer>
+      Mi Aplicación &copy; 2024
+    </footer>
+
   </div>
+
 </body>
 </html>

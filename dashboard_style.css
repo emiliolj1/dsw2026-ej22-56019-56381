@@ -15,8 +15,14 @@
   bottom: 0;
   width: 200px;
   background-color: #f4f4f4;
+
   left: -200px;
 }
+
+.dashboard-container nav.open {
+  left: 0;
+}
+
 
 .dashboard-container nav ul {
   list-style: none;
@@ -34,9 +40,11 @@
   height: 50px;
   background-color: #333;
   color: white;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   padding: 0 1rem;
 }
 
@@ -60,9 +68,12 @@
   padding: 1rem;
 }
 
+
 @media screen and (min-width: 600px) {
+
   .dashboard-container {
     grid-template-columns: 200px 1fr;
+
     grid-template-areas: 
       "header header"
       "nav main"
@@ -71,6 +82,7 @@
 
   .dashboard-container nav {
     grid-area: nav;
+
     position: static;
     left: 0;
     height: auto;

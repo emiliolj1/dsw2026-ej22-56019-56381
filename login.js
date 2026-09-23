@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const password = document.getElementById('password').value;
         
         // Aquí puedes agregar la lógica para validar el usuario y la contraseña
-        if(username === 'admin' && password === 'password') {
+        if(username === 'admin' && password === 'admin123') {
             // Redirigir a la página de productos o dashboard
             window.location.href = 'dashboard.html';
         } else {
