@@ -1,7 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const logoutButton = document.getElementById('logout');
+import { requireSession, logout } from './js/session.js';
 
-  logoutButton.addEventListener('click', () => {
-    window.location.href = 'login.html';
-  });
-});
+if (requireSession()) {
+  document.querySelector('.dashboard-container').hidden = false;
+  document.getElementById('logout').addEventListener('click', logout);
+}
