@@ -1,3 +1,7 @@
+.dashboard-container[hidden] {
+  display: none;
+}
+
 .dashboard-container {
   display: grid;
   grid-template-columns: auto;
