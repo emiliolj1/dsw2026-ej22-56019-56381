@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destino de prueba U06</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Destino de prueba de U06</h1>
+    <p>Esta página confirma la navegación del formulario. El listado real de U07 todavía no está integrado.</p>
+    <p id="qa-saved" class="notice" hidden>El formulario llegó con <code>?saved=1</code>.</p>
+    <a class="button" href="/specialty-form.html">Volver al formulario</a>
+  </main>
+  <script type="module">
+    document.getElementById('qa-saved').hidden = new URLSearchParams(location.search).get('saved') !== '1';
+  </script>
+</body>
+</html>

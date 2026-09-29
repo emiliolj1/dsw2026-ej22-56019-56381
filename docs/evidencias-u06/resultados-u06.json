@@ -1,0 +1,190 @@
+{
+  "timestamp": "2026-09-29T21:24:37.354Z",
+  "browser": "Chromium 153.0.8010.0",
+  "baseCommit": "3736bbe53aafc2561bcb29c6a278765e3ee8aa24",
+  "scope": "U06 con session.js, specialties-store.js y style.css reales; shell y destino del listado de prueba si faltan.",
+  "evidenceDoesNotVerify": [
+    "U04 shell real",
+    "U05 contador visual del panel",
+    "U07 listado, búsqueda y eliminación desde la interfaz",
+    "U08 recorrido integral",
+    "U09 cierre visual"
+  ],
+  "sourceHashes": {
+    "specialty-form.html": "0faab35558e0b864146d557d00a76be51d07e48adce394f303eff07e817c9b58",
+    "specialty-form.js": "0754024ae71fca4a3a19d4386dd4a788617dc8d25ac486205dfac58dffb85eb0",
+    "specialty-form_style.css": "2f1ef5e5a307dc954debe2682ca417d6b7c69f305752c175dcc48f8fa343a9b7",
+    "js/session.js": "66c105e3d792e33ba4bdbb45b5c0946468f365b7f8ab03c4a81c419292e504d9",
+    "js/specialties-store.js": "3871e8a7d6e9f99f8a8008cc739ba40f1e18083ccf6e2bebabd3e0b359d214e1",
+    "style.css": "82f2c429eee5af951f8d587ab3feab1cd8ad4dc803bc65b1258f9f71efcfd08b"
+  },
+  "passed": 33,
+  "total": 33,
+  "results": [
+    {
+      "id": "F01",
+      "name": "Acceso directo sin sesión",
+      "result": "PASS"
+    },
+    {
+      "id": "F02",
+      "name": "Login real: credenciales inválidas y válidas",
+      "result": "PASS"
+    },
+    {
+      "id": "F03",
+      "name": "Alta: título, campos vacíos y activa por defecto",
+      "result": "PASS"
+    },
+    {
+      "id": "F04",
+      "name": "Campos obligatorios: errores, foco y ninguna escritura",
+      "result": "PASS"
+    },
+    {
+      "id": "F05",
+      "name": "Límites inferiores: nombre 2 y descripción 9",
+      "result": "PASS"
+    },
+    {
+      "id": "F06",
+      "name": "Mínimos válidos: nombre 3 y descripción 10",
+      "result": "PASS"
+    },
+    {
+      "id": "F07",
+      "name": "Máximos válidos: nombre y descripción 100",
+      "result": "PASS"
+    },
+    {
+      "id": "F08",
+      "name": "Límites superiores: ambos campos 101",
+      "result": "PASS"
+    },
+    {
+      "id": "F09",
+      "name": "Nombre duplicado: mayúsculas, tildes y espacios",
+      "result": "PASS"
+    },
+    {
+      "id": "F10",
+      "name": "Alta válida: recorte, datos reales y persistencia tras refrescar",
+      "result": "PASS"
+    },
+    {
+      "id": "F11",
+      "name": "Alta inactiva: contador del store excluye el registro",
+      "result": "PASS"
+    },
+    {
+      "id": "F12",
+      "name": "Edición: carga de campos y título",
+      "result": "PASS"
+    },
+    {
+      "id": "F13",
+      "name": "Edición de inactiva: selección correcta",
+      "result": "PASS"
+    },
+    {
+      "id": "F14",
+      "name": "Edición sin cambiar nombre: conserva id y createdAt",
+      "result": "PASS"
+    },
+    {
+      "id": "F15",
+      "name": "Edición a inactiva: contador del store pasa de 1 a 0",
+      "result": "PASS"
+    },
+    {
+      "id": "F16",
+      "name": "Edición duplicada: no reemplaza ningún registro",
+      "result": "PASS"
+    },
+    {
+      "id": "F17",
+      "name": "Cancelar alta: navegación sin escritura",
+      "result": "PASS"
+    },
+    {
+      "id": "F18",
+      "name": "Cancelar edición: conserva todos los datos",
+      "result": "PASS"
+    },
+    {
+      "id": "F19",
+      "name": "Identificador inexistente: aviso y guardado bloqueado",
+      "result": "PASS"
+    },
+    {
+      "id": "F20",
+      "name": "Registro eliminado: no puede editarse",
+      "result": "PASS"
+    },
+    {
+      "id": "F21",
+      "name": "Parámetro id vacío: no se interpreta como alta",
+      "result": "PASS"
+    },
+    {
+      "id": "F22",
+      "name": "Datos corruptos al editar: aviso sin sobrescribir",
+      "result": "PASS"
+    },
+    {
+      "id": "F23",
+      "name": "Datos corruptos al crear: aviso sin sobrescribir",
+      "result": "PASS"
+    },
+    {
+      "id": "F24",
+      "name": "Fallo de almacenamiento: no escribe y permite reintentar",
+      "result": "PASS"
+    },
+    {
+      "id": "F25",
+      "name": "Eliminación concurrente: el store rechaza la actualización",
+      "result": "PASS"
+    },
+    {
+      "id": "F26",
+      "name": "Contenido HTML: se trata como texto",
+      "result": "PASS"
+    },
+    {
+      "id": "F27",
+      "name": "Sesión retirada antes de guardar: redirige y no escribe",
+      "result": "PASS"
+    },
+    {
+      "id": "F28",
+      "name": "pageshow vuelve a comprobar la sesión",
+      "result": "PASS"
+    },
+    {
+      "id": "F29",
+      "name": "Teclado: recorre los campos y guarda con Enter",
+      "result": "PASS"
+    },
+    {
+      "id": "F30",
+      "name": "Doble envío de edición: una sola escritura",
+      "result": "PASS"
+    },
+    {
+      "id": "F31",
+      "name": "Móvil 375 px: campos, botones y errores sin desborde",
+      "result": "PASS"
+    },
+    {
+      "id": "F32",
+      "name": "Store U03: borrado lógico, contador y persistencia",
+      "result": "PASS"
+    },
+    {
+      "id": "F33",
+      "name": "Logout real del panel: elimina sesión y protege su URL",
+      "result": "PASS"
+    }
+  ]
+}

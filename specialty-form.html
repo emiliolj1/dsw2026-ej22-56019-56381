@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nueva especialidad | Gestor de turnos</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./specialty-form_style.css">
+  <script type="module" src="./specialty-form.js"></script>
+</head>
+<body>
+  <div id="app-shell"></div>
+
+  <main id="main-content" class="container specialty-page" hidden>
+    <nav class="specialty-breadcrumb" aria-label="Ruta de navegación">
+      <a href="./specialties.html">Especialidades</a>
+      <span aria-hidden="true">/</span>
+      <span id="form-breadcrumb" aria-current="page">Nueva especialidad</span>
+    </nav>
+
+    <header class="specialty-heading">
+      <h1 id="form-title">Nueva especialidad</h1>
+      <p id="form-intro">Completá los datos para registrar una especialidad médica.</p>
+    </header>
+
+    <section id="record-notice" class="notice notice--error" role="alert" tabindex="-1" hidden>
+      <p id="record-notice-message"></p>
+      <a class="button button--secondary" href="./specialties.html">Volver al listado</a>
+    </section>
+
+    <form id="specialty-form" class="card specialty-form" aria-labelledby="form-title" novalidate>
+      <p class="specialty-required">Todos los campos son obligatorios.</p>
+      <p id="form-error" class="notice notice--error" role="alert" tabindex="-1" hidden></p>
+
+      <fieldset id="specialty-fields" class="specialty-fields">
+        <legend class="specialty-visually-hidden">Datos de la especialidad</legend>
+
+        <div class="form-field">
+          <label for="name">Nombre de la especialidad</label>
+          <input id="name" name="name" type="text" placeholder="Ej. Cardiología"
+            required aria-describedby="name-hint name-error" aria-invalid="false">
+          <p id="name-hint" class="specialty-hint">Entre 3 y 100 caracteres. El nombre debe ser único.</p>
+          <p id="name-error" class="field-error" hidden></p>
+        </div>
+
+        <div class="form-field">
+          <label for="description">Descripción</label>
+          <textarea id="description" name="description" rows="5"
+            placeholder="Describí el alcance y la atención de esta especialidad."
+            required aria-describedby="description-hint description-error" aria-invalid="false"></textarea>
+          <p id="description-hint" class="specialty-hint">Entre 10 y 100 caracteres.</p>
+          <p id="description-error" class="field-error" hidden></p>
+        </div>
+
+        <div class="form-field">
+          <label id="state-label" for="isActive">Estado inicial</label>
+          <select id="isActive" name="isActive" required aria-describedby="state-hint isActive-error" aria-invalid="false">
+            <option value="true">Activa</option>
+            <option value="false">Inactiva</option>
+          </select>
+          <p id="state-hint" class="specialty-hint">Elegí si la especialidad estará activa.</p>
+          <p id="isActive-error" class="field-error" hidden></p>
+        </div>
+      </fieldset>
+
+      <div class="specialty-actions">
+        <a id="cancel-button" class="button button--secondary" href="./specialties.html">Cancelar</a>
+        <button id="save-button" class="button" type="submit">Guardar especialidad</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>
