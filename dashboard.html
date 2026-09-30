@@ -1,42 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Listado de Productos</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="dashboard_style.css">
+  <title>Panel de administración | Gestor de turnos</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./dashboard_style.css">
   <script type="module" src="./dashboard.js"></script>
 </head>
+
 <body>
-  <div class="dashboard-container" hidden>
-    <header>
-      <span>Gestor de turnos</span>
-      <div>
-        <button class="menu">&#9776;</button>
-        <button id="logout">Cerrar Sesión</button>
-      </div>
+  <div id="app-shell"></div>
+
+  <main id="main-content" class="container dashboard-page" hidden>
+    <header class="dashboard-heading">
+      <h1>Panel de administración</h1>
+      <p>Bienvenido al gestor de turnos. Administrá las especialidades médicas desde este panel.</p>
     </header>
-    <nav id="sidebar">
-      <ul>
-        <li><a href="#">Panel</a></li>
-      </ul>
-    </nav>
-    <main>
-      <h1>Pacientes</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Paciente</th>
-          </tr>
-        </thead>
-        <tbody id="product-table-body">
-          <!-- Los productos se cargarán aquí dinámicamente -->
-        </tbody>
-      </table>
-    </main>
-    <footer>Mi Aplicación &copy; 2024</footer>
-  </div>
+    <section class="card dashboard-summary" aria-labelledby="specialties-title">
+      <h2 id="specialties-title">Especialidades activas</h2>
+      <p id="active-specialties-count" class="dashboard-count">—</p>
+      <p>Especialidades disponibles para la gestión de turnos.</p>
+      <p id="dashboard-error" class="notice notice--error" role="alert" hidden></p>
+    </section>
+    <section class="dashboard-actions" aria-labelledby="actions-title">
+      <h2 id="actions-title">Gestión de especialidades</h2>
+      <p>Consultá las especialidades registradas o incorporá una nueva.</p>
+
+      <div class="dashboard-actions__buttons">
+        <a class="button" href="./specialty-form.html">
+          Nueva especialidad
+        </a>
+        <a class="button button--secondary" href="./specialties.html">
+          Ver especialidades
+        </a>
+      </div>
+    </section>
+  </main>
 </body>
+
 </html>

@@ -1,86 +1,68 @@
-.dashboard-container[hidden] {
+.dashboard-page[hidden] {
   display: none;
 }
 
-.dashboard-container {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas: 
-    "header"
-    "main"
-    "footer";
-  height: 100dvh;
+.dashboard-page {
+  padding-block: clamp(1.5rem, 4vw, 3rem);
 }
 
-.dashboard-container nav {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 200px;
-  background-color: #f4f4f4;
-  left: -200px;
+.dashboard-heading {
+  margin-bottom: 1.5rem;
 }
 
-.dashboard-container nav ul {
-  list-style: none;
-  padding: 0;
+.dashboard-heading h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  line-height: 1.2;
+}
+
+.dashboard-heading p {
   margin: 0;
+  max-width: 65ch;
 }
 
-.dashboard-container nav ul li {
-  padding: 1rem;
-  border-bottom: 1px solid #ddd;
+.dashboard-summary {
+  max-width: 36rem;
 }
 
-.dashboard-container header {
-  grid-area: header;
-  height: 50px;
-  background-color: #333;
-  color: white;
+.dashboard-summary h2 {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.dashboard-count {
+  margin: 0.5rem 0;
+  color: var(--color-primary);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.dashboard-actions {
+  margin-top: 2rem;
+}
+
+.dashboard-actions h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.dashboard-actions p {
+  margin: 0 0 1rem;
+}
+
+.dashboard-actions__buttons {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
-.dashboard-container header div {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.dashboard-container main {
-  grid-area: main;
-  padding: 1rem;
-  overflow-y: auto;
-}
-
-.dashboard-container footer {
-  grid-area: footer;
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-}
-
-@media screen and (min-width: 600px) {
-  .dashboard-container {
-    grid-template-columns: 200px 1fr;
-    grid-template-areas: 
-      "header header"
-      "nav main"
-      "footer footer";
+@media (max-width: 767px) {
+  .dashboard-actions__buttons {
+    flex-direction: column;
   }
 
-  .dashboard-container nav {
-    grid-area: nav;
-    position: static;
-    left: 0;
-    height: auto;
-  }
-
-  .dashboard-container header div .menu {
-    display: none;
+  .dashboard-actions__buttons .button {
+    width: 100%;
   }
 }
