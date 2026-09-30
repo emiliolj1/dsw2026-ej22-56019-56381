@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Especialidades | Portal Admin</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="specialties_style.css">
+</head>
+<body>
+  <div id="app-shell"></div>
+
+  <main class="sp-page" id="main">
+    <header class="sp-header">
+      <div>
+        <h1>Directorio de Especialidades</h1>
+        <p class="sp-subtitle">Administre las categorías médicas y servicios del personal especializado.</p>
+      </div>
+      <div class="sp-actions">
+        <form id="search-form" class="sp-search" role="search">
+          <label for="search-input" class="sp-visually-hidden">Buscar especialidad por nombre</label>
+          <input id="search-input" type="search" placeholder="Buscar especialidad..." autocomplete="off">
+        </form>
+        <a class="sp-btn sp-btn--primary" href="specialty-form.html">Nueva especialidad</a>
+      </div>
+    </header>
+
+    <div id="notice" role="status" aria-live="polite" hidden></div>
+
+    <section class="sp-card" aria-label="Listado de especialidades">
+      <div class="sp-table-wrap" id="table-wrap">
+        <table class="sp-table">
+          <thead>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="specialties-body"></tbody>
+        </table>
+      </div>
+
+      <div id="empty-state" class="sp-empty" hidden></div>
+
+      <footer class="sp-pager" id="pager" hidden>
+        <p id="page-info"></p>
+        <div class="sp-pager-buttons">
+          <button type="button" class="sp-btn" id="prev-btn">Anterior</button>
+          <button type="button" class="sp-btn" id="next-btn">Siguiente</button>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <script type="module" src="specialties.js"></script>
+</body>
+</html>
