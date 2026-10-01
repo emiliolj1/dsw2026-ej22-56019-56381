@@ -1,75 +1,38 @@
 # U06 - Formulario de especialidades de Nacho
 
-## Estado
+U06 fue integrada mediante [PR #4](https://github.com/emiliolj1/dsw2026-ej22-56019-56381/pull/4), commit propio `ac8a8cb`. U04/U05/U07 también están integradas. La [QA de U08](qa-u08.md) prueba el formulario con el shell, panel y listado reales.
 
-Implementación local preparada sobre `origin/development` en `3736bbe53aafc2561bcb29c6a278765e3ee8aa24` (29/09/2026). No está publicada ni fusionada. El store, los estilos comunes y la sesión están integrados; el shell, el listado y el nuevo panel todavía no estaban en esa revisión.
+## Archivos y contratos
 
-La pantalla sigue la composición de la página 26 del PDF v1.7 y la paleta de U01. Los archivos propios son `specialty-form.html`, `specialty-form.js`, `specialty-form_style.css`, `tests/u06/` y esta documentación. Las capturas y los resultados están en `docs/evidencias-u06/`.
+`specialty-form.html`, `specialty-form.js` y `specialty-form_style.css` implementan una pantalla de alta/edición con la composición del PDF v1.7, página 26, y los componentes de `style.css`.
 
-## Contratos reales utilizados
+| Módulo | Interfaz |
+| --- | --- |
+| `js/session.js` | `requireSession()` devuelve true o redirige al login y devuelve false |
+| `js/shell.js` | `renderShell({ activePage: 'specialties' })`, sobre `#app-shell`, conservando `main#main-content` |
+| `js/specialties-store.js` | `getById(id)` devuelve copia del registro no eliminado o null |
+| `js/specialties-store.js` | `create(data)` / `update(id, data)` devuelven `{ ok: true, data }` o `{ ok: false, errors }` |
 
-| Módulo | Función | Resultado |
-| --- | --- | --- |
-| `js/session.js` | `requireSession()` | `true` con sesión; `false` y redirección sin sesión |
-| `js/specialties-store.js` | `getById(id)` | Copia del registro no eliminado o `null` |
-| `js/specialties-store.js` | `create(data)` | `{ ok: true, data }` o `{ ok: false, errors }` |
-| `js/specialties-store.js` | `update(id, data)` | Mismo contrato; conserva `id` y `createdAt` |
-
-El payload es `{ name, description, isActive }`, con estado booleano. Los errores llegan en `errors.name`, `errors.description` o `errors.general`. El store también puede lanzar `StoreCorruptError` o errores de almacenamiento. El formulario informa estos problemas sin restaurar ni sobrescribir datos dañados.
-
-Las reglas de obligatorio, longitud y duplicados se ejecutan en el store. El formulario recorta espacios, envía datos y muestra los mensajes con `textContent`. Usa `novalidate` para presentar los errores de esa misma validación.
-
-## Shell: contrato propuesto, pendiente de Emilio
-
-```js
-import { renderShell } from './js/shell.js';
-renderShell({ activePage: 'specialties' });
-```
-
-La firma aún no está confirmada. Se espera que U04 pinte navegación en `#app-shell`, marque especialidades y conserve `main#main-content`, que está fuera del contenedor. La disposición de menú y cabecera corresponde a U04. Adaptar la llamada si Emilio define otra firma y verificar con el shell real antes de integrar. Las fixtures no confirman un acuerdo del equipo.
-
-Con un servidor estático normal se necesita el archivo real `js/shell.js`: sin él, el import ES impide iniciar la pantalla. Mientras falta U04, usar la vista aislada.
+El payload es `{ name, description, isActive }`, con estado booleano. El store valida; el formulario recorta espacios y presenta `errors.name`, `errors.description` y `errors.general` con textContent. La edición conserva id/createdAt. Los errores de almacenamiento se informan sin borrar ni restaurar automáticamente.
 
 ## Rutas
 
-| Ruta / acción | Comportamiento |
+| Ruta / acción | Resultado |
 | --- | --- |
-| `specialty-form.html` | Alta, campos vacíos y activa por defecto |
-| `specialty-form.html?id=ID` | Carga el registro para editar |
-| Id vacío, inexistente o eliminado | Aviso y guardado bloqueado; enlace al listado |
-| Guardado correcto | `specialties.html?saved=1` |
-| Cancelar | `specialties.html`, sin escribir |
+| `specialty-form.html` | Alta, textos vacíos y activa por defecto |
+| `specialty-form.html?id=ID` | Edición con datos precargados |
+| Id vacío, inexistente o eliminado | Aviso y guardado bloqueado |
+| Guardar | `specialties.html?saved=1`; el listado confirma y limpia el parámetro |
+| Cancelar | Listado, sin escritura |
 
-Lucas debe enlazar edición con `encodeURIComponent(id)` y mostrar confirmación al recibir `saved=1` en U07. `isActive` es del prototipo local; el POST/PUT del PDF solo muestra `name` y `description`.
+El estado es del prototipo local; el ejemplo POST/PUT del PDF muestra name y description. La sesión de demostración no reemplaza seguridad de backend.
 
-## Vista aislada
+## Ejecutar y probar
 
-Requiere Node.js 18 o posterior. Desde la raíz:
+Desde la raíz, iniciar `python -m http.server 5500` o Live Server, abrir login.html e ingresar con `admin` / `admin123`. Navegar al formulario desde el panel/listado. Los módulos ES se ejecutan por HTTP.
 
-```bash
-node tests/u06/preview-server.mjs
-```
+La suite integrada actual es `node tests/u08/run-browser-tests.mjs`; sus dependencias y resultados se explican en el README. La suite de regresión del formulario es `node tests/u06/run-browser-tests.mjs`: aprobó 33/33 casos y se actualizaron la espera de navegación (el listado elimina saved de la URL), el selector de salida del shell y la comprobación del destino final ante redirecciones simultáneas. El [reporte de regresión](evidencias-u08/regresion-u06.md) mantiene el alcance del formulario.
 
-Abrir `http://127.0.0.1:5501/`, iniciar sesión con `admin` / `admin123` y abrir el formulario en la misma pestaña siguiendo las instrucciones. Se usan login, sesión y store reales. Cuando falta shell o listado, el servidor sirve fixtures rotuladas, sin crear esos archivos de producción.
+Las capturas de `evidencias-u06/` documentan la vista aislada original y se conservan como historia de U06. Las capturas de `evidencias-u08/` muestran la integración real. El servidor de `tests/u06/preview-server.mjs` conserva sus fixtures para la etapa de preparación, pero la QA U08 usa únicamente un servidor estático sin sustitutos.
 
-Para editar manualmente, obtener el id desde el array `dsw_u4_specialties_v1` en las herramientas del navegador y abrir `specialty-form.html?id=ID`. Los datos de este puerto son independientes de otros puertos.
-
-## Pruebas opcionales
-
-Las pruebas no agregan dependencias al producto. Con Node.js y npm:
-
-```bash
-npm install --no-save --package-lock=false playwright
-npx playwright install chromium
-node tests/u06/run-browser-tests.mjs
-```
-
-Resultados en `tmp/u06-qa/`. No subir `node_modules` ni datos del navegador. Cada caso usa un contexto nuevo y registros ficticios. `NACHO_CHROMIUM_PATH` permite indicar otro ejecutable compatible y `U06_QA_OUTPUT` elegir la carpeta del reporte.
-
-Las capturas muestran alta, edición, errores y 375 px. El badge **U06 · vista aislada** identifica su alcance. Se comprueban persistencia y contador del store; no la tabla ni la tarjeta del panel. El menú de prueba tampoco valida U04.
-
-## Entrega
-
-Rama `feature/u4-formulario-especialidades`, PR a `development`, revisor Integrante 3. Commit sugerido: `feat: crear y editar especialidades`.
-
-Antes de la revisión final, integrar U04, acordar su contrato, repetir el recorrido con shell/listado reales y ejecutar `git diff --check`. Agregar las capturas integradas cuando existan. No aprobar el propio PR ni fusionar a main.
+U08 requiere revisión de Emilio y, para sus ajustes del listado, de Lucas. No se emitieron aprobaciones ni se fusionó a main desde esta entrega.

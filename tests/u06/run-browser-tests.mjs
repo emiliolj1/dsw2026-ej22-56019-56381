@@ -65,7 +65,7 @@ async function save() {
 }
 
 async function saved() {
-  await page.waitForURL('**/specialties.html?saved=1');
+  await page.waitForURL((target) => target.pathname === '/specialties.html');
 }
 
 async function activeCount() {
@@ -279,7 +279,10 @@ const cases = [
       sessionStorage.removeItem('dsw_u4_admin_session_v1');
       window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: true }));
     });
-    await page.waitForURL('**/login.html');
+    // Shell y formulario pueden pedir la misma redirección: comprobar el destino final.
+    await page.locator('#login-form').waitFor({ state: 'visible' });
+    assert.equal(new URL(page.url()).pathname, '/login.html');
+    assert.equal(await page.evaluate(() => sessionStorage.getItem('dsw_u4_admin_session_v1')), null);
   }],
   ['Teclado: recorre los campos y guarda con Enter', async () => {
     await open(); await page.locator('#name').focus();
@@ -332,7 +335,7 @@ const cases = [
   }],
   ['Logout real del panel: elimina sesión y protege su URL', async () => {
     await open({ route: 'dashboard.html' });
-    await page.locator('#logout').click(); await page.waitForURL('**/login.html');
+    await page.locator('#app-logout, #logout').click(); await page.waitForURL('**/login.html');
     assert.equal(await page.evaluate(() => sessionStorage.getItem('dsw_u4_admin_session_v1')), null);
     await page.goto(`${url}/dashboard.html`); await page.waitForURL('**/login.html');
     await page.goto(`${url}/specialty-form.html`); await page.waitForURL('**/login.html');

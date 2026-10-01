@@ -1,0 +1,86 @@
+[
+  {
+    "number": 1,
+    "title": "realizadas las especialidades en localStorage",
+    "state": "closed",
+    "merged": true,
+    "merged_at": "2026-09-28T22:12:51Z",
+    "html_url": "https://github.com/emiliolj1/dsw2026-ej22-56019-56381/pull/1",
+    "author": "lucas33-dev",
+    "base": "development",
+    "branch": "feature/u4-store-especialidades",
+    "merge_commit_sha": "b6d764a63bd06b90de7d0cf0d75f3349e627a229"
+  },
+  {
+    "number": 2,
+    "title": "feat: agregar base visual de Unidad",
+    "state": "closed",
+    "merged": true,
+    "merged_at": "2026-09-29T01:50:15Z",
+    "html_url": "https://github.com/emiliolj1/dsw2026-ej22-56019-56381/pull/2",
+    "author": "emiliolj1",
+    "base": "development",
+    "branch": "feature/u4-base-visual",
+    "merge_commit_sha": "70610922fc55d2b7ae41c5e672bd51da13b3aed2"
+  },
+  {
+    "number": 3,
+    "title": "feat: implementar acceso simulado de administrador",
+    "state": "closed",
+    "merged": true,
+    "merged_at": "2026-09-29T18:20:04Z",
+    "html_url": "https://github.com/emiliolj1/dsw2026-ej22-56019-56381/pull/3",
+    "author": "cfacundo7",
+    "base": "development",
+    "branch": "feature/u4-login",
+    "merge_commit_sha": "3736bbe53aafc2561bcb29c6a278765e3ee8aa24"
+  },
+  {
+    "number": 4,
+    "title": "feat: crear y editar especialidades",
+    "state": "closed",
+    "merged": true,
+    "merged_at": "2026-09-29T22:45:34Z",
+    "html_url": "https://github.com/emiliolj1/dsw2026-ej22-56019-56381/pull/4",
+    "author": "NachoF1390",
+    "base": "development",
+    "branch": "feature/u4-formulario-especialidades",
+    "merge_commit_sha": "755dc2ce0fefa047810530732cd73ba02bef0a18"
+  },
+  {
+    "number": 5,
+    "title": "feat: agregar navegación y menú adaptable",
+    "state": "closed",
+    "merged": true,
+    "merged_at": "2026-09-29T23:28:11Z",
+    "html_url": "https://github.com/emiliolj1/dsw2026-ej22-56019-56381/pull/5",
+    "author": "emiliolj1",
+    "base": "development",
+    "branch": "feature/u4-navegacion",
+    "merge_commit_sha": "3c366df7ef06937a603b620ef78a58b1a875162e"
+  },
+  {
+    "number": 6,
+    "title": "terminado listar y buscar especialidades",
+    "state": "closed",
+    "merged": true,
+    "merged_at": "2026-09-30T05:09:28Z",
+    "html_url": "https://github.com/emiliolj1/dsw2026-ej22-56019-56381/pull/6",
+    "author": "lucas33-dev",
+    "base": "development",
+    "branch": "feature/u4-listado-especialidades",
+    "merge_commit_sha": "c51e3d062d3b2d25fb0adf042e4229081a8d632e"
+  },
+  {
+    "number": 7,
+    "title": "adaptar panel de administración a especialidades",
+    "state": "closed",
+    "merged": true,
+    "merged_at": "2026-09-30T05:09:58Z",
+    "html_url": "https://github.com/emiliolj1/dsw2026-ej22-56019-56381/pull/7",
+    "author": "cfacundo7",
+    "base": "development",
+    "branch": "feature/u4-panel",
+    "merge_commit_sha": "d4c5f2d31264be46f964887c65dff768500252e3"
+  }
+]

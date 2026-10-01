@@ -1,0 +1,305 @@
+{
+  "timestamp": "2026-10-01T00:32:38.506Z",
+  "browser": "Chromium 153.0.8010.0",
+  "platform": "linux",
+  "baseCommit": "d4c5f2d31264be46f964887c65dff768500252e3",
+  "viewports": [
+    "1366 x 900",
+    "375 x 812"
+  ],
+  "fixtures": false,
+  "scope": "Login, shell, panel, store, listado y formulario reales del repositorio, servidos por HTTP sin sustitutos.",
+  "sourceHashes": {
+    "login.html": "5d5d93b03e4868d84ba01429bf2d2090798f0df21a05537454f28446ee957c97",
+    "login.js": "fff2640e6ee8726aab348f3d2f8fa084932aa551be4d4e35f3be0c3ea84a2075",
+    "login_style.css": "ea0a2389f54561aaca424222ed47af6370e75ba97190c4a1084318698cda8947",
+    "dashboard.html": "fa9d02ecb77cb021db8423329769fdd9f3c6a6b4c9f306526500bf51ad04e060",
+    "dashboard.js": "1adc7ee35114d3504a7da55999511850adceae086829ced1276f5189fd4d3c5b",
+    "dashboard_style.css": "5c8b744a927fa27e0692399a688ddad2d1080a88ed3f6f316dd4683174c1a791",
+    "specialties.html": "e22fdfd7622a2fc59f4cb8458987ccb84c2a7579ac3690fdee0d7c0925cd304b",
+    "specialties.js": "32d1e667c9684e0a90091d25f79742656c1cf8dc0b3e916ecc0a5149c3b435e9",
+    "specialties_style.css": "98349815c7a26e765e40cab70c1a435a0f739186d2988c86415845f3eb14dc8c",
+    "specialty-form.html": "0faab35558e0b864146d557d00a76be51d07e48adce394f303eff07e817c9b58",
+    "specialty-form.js": "0754024ae71fca4a3a19d4386dd4a788617dc8d25ac486205dfac58dffb85eb0",
+    "specialty-form_style.css": "2f1ef5e5a307dc954debe2682ca417d6b7c69f305752c175dcc48f8fa343a9b7",
+    "style.css": "54e9e1b129e2b47b045c8e7461f171f4621ab1f9c9d7a6aa44fde115a0ef3a17",
+    "js/session.js": "66c105e3d792e33ba4bdbb45b5c0946468f365b7f8ab03c4a81c419292e504d9",
+    "js/shell.js": "bf06caeb14eddf783322975048bc5296960214a175f3c800bab7d839f4a57727",
+    "js/specialties-store.js": "3871e8a7d6e9f99f8a8008cc739ba40f1e18083ccf6e2bebabd3e0b359d214e1"
+  },
+  "passed": 33,
+  "total": 37,
+  "results": [
+    {
+      "id": "QA01",
+      "name": "Login inválido y válido",
+      "expected": "Error visible, foco y acceso al panel con credenciales correctas.",
+      "result": "PASS",
+      "durationMs": 333
+    },
+    {
+      "id": "QA02",
+      "name": "Panel: contador real y enlaces",
+      "expected": "Cuenta solo activas no eliminadas; enlaces y sección activa correctos.",
+      "result": "PASS",
+      "durationMs": 215
+    },
+    {
+      "id": "QA03",
+      "name": "Listado vacío",
+      "expected": "Mensaje, acción de crear y paginación oculta.",
+      "result": "FAIL",
+      "detail": "Expected values to be strictly equal:\n\nfalse !== true\n",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "durationMs": 163
+    },
+    {
+      "id": "QA04",
+      "name": "Alta válida y persistencia",
+      "expected": "Recorta textos, guarda, muestra fila y aviso; persiste al refrescar.",
+      "result": "PASS",
+      "durationMs": 417
+    },
+    {
+      "id": "QA05",
+      "name": "Obligatorios",
+      "expected": "Mensajes del store, foco en nombre y ninguna escritura.",
+      "result": "PASS",
+      "durationMs": 201
+    },
+    {
+      "id": "QA06",
+      "name": "Límites inferiores",
+      "expected": "Mensajes del store, foco en nombre y ninguna escritura.",
+      "result": "PASS",
+      "durationMs": 288
+    },
+    {
+      "id": "QA07",
+      "name": "Límites superiores",
+      "expected": "Mensajes del store, foco en nombre y ninguna escritura.",
+      "result": "PASS",
+      "durationMs": 196
+    },
+    {
+      "id": "QA08",
+      "name": "Mínimos válidos",
+      "expected": "Acepta ambos límites exactos y muestra el registro en la tabla.",
+      "result": "PASS",
+      "durationMs": 234
+    },
+    {
+      "id": "QA09",
+      "name": "Máximos válidos",
+      "expected": "Acepta ambos límites exactos y muestra el registro en la tabla.",
+      "result": "PASS",
+      "durationMs": 251
+    },
+    {
+      "id": "QA10",
+      "name": "Nombre duplicado normalizado",
+      "expected": "Rechaza tildes, mayúsculas y espacios equivalentes sin guardar.",
+      "result": "PASS",
+      "durationMs": 212
+    },
+    {
+      "id": "QA11",
+      "name": "Búsqueda y limpieza",
+      "expected": "Filtra por nombre, muestra vacío sin coincidencias y restaura la tabla.",
+      "result": "FAIL",
+      "detail": "Expected values to be strictly equal:\n\nfalse !== true\n",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "durationMs": 208
+    },
+    {
+      "id": "QA12",
+      "name": "Edición conserva identidad y fecha",
+      "expected": "Carga desde Editar; modifica el mismo registro y persiste.",
+      "result": "PASS",
+      "durationMs": 375
+    },
+    {
+      "id": "QA13",
+      "name": "Edición con el mismo nombre",
+      "expected": "El registro no se considera duplicado de sí mismo.",
+      "result": "PASS",
+      "durationMs": 234
+    },
+    {
+      "id": "QA14",
+      "name": "Edición a nombre duplicado",
+      "expected": "No altera ninguno de los dos registros.",
+      "result": "PASS",
+      "durationMs": 219
+    },
+    {
+      "id": "QA15",
+      "name": "Estado inactivo y contador del panel",
+      "expected": "La fila indica Inactiva y el contador visual pasa de 1 a 0.",
+      "result": "PASS",
+      "durationMs": 318
+    },
+    {
+      "id": "QA16",
+      "name": "Alta inactiva y reactivación",
+      "expected": "No cuenta al crear; al reactivar cuenta 1, sin duplicar.",
+      "result": "PASS",
+      "durationMs": 442
+    },
+    {
+      "id": "QA17",
+      "name": "Cancelar alta",
+      "expected": "Vuelve al listado sin escribir datos ni mostrar guardado.",
+      "result": "PASS",
+      "durationMs": 231
+    },
+    {
+      "id": "QA18",
+      "name": "Cancelar edición",
+      "expected": "Vuelve al listado sin escribir datos ni mostrar guardado.",
+      "result": "PASS",
+      "durationMs": 235
+    },
+    {
+      "id": "QA19",
+      "name": "Eliminación cancelada",
+      "expected": "El diálogo cancelado conserva la fila y todos los datos.",
+      "result": "PASS",
+      "durationMs": 236
+    },
+    {
+      "id": "QA20",
+      "name": "Eliminación confirmada y persistente",
+      "expected": "Oculta la fila, conserva el borrado lógico y actualiza el contador.",
+      "result": "PASS",
+      "durationMs": 269
+    },
+    {
+      "id": "QA21",
+      "name": "Paginación y búsqueda desde otra página",
+      "expected": "Recorre 5/5/2 registros y reinicia página al filtrar.",
+      "result": "PASS",
+      "durationMs": 253
+    },
+    {
+      "id": "QA22",
+      "name": "URL privada: dashboard.html",
+      "expected": "Una sesión nueva sin acceso vuelve al login.",
+      "result": "PASS",
+      "durationMs": 101
+    },
+    {
+      "id": "QA23",
+      "name": "URL privada: specialties.html",
+      "expected": "Una sesión nueva sin acceso vuelve al login.",
+      "result": "PASS",
+      "durationMs": 98
+    },
+    {
+      "id": "QA24",
+      "name": "URL privada: specialty-form.html",
+      "expected": "Una sesión nueva sin acceso vuelve al login.",
+      "result": "PASS",
+      "durationMs": 102
+    },
+    {
+      "id": "QA25",
+      "name": "Cerrar sesión y botón Atrás",
+      "expected": "La salida impide volver al panel, al listado y al formulario.",
+      "result": "PASS",
+      "durationMs": 318
+    },
+    {
+      "id": "QA26",
+      "name": "Shell y listado al restaurar sin sesión",
+      "expected": "El evento pageshow oculta el contenido y redirige al login.",
+      "result": "FAIL",
+      "detail": "Expected values to be strictly equal:\n\nfalse !== true\n",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "durationMs": 143
+    },
+    {
+      "id": "QA27",
+      "name": "Id inexistente",
+      "expected": "Aviso accesible, campos/guardar bloqueados y retorno al listado.",
+      "result": "PASS",
+      "durationMs": 212
+    },
+    {
+      "id": "QA28",
+      "name": "Id eliminado",
+      "expected": "Aviso accesible, campos/guardar bloqueados y retorno al listado.",
+      "result": "PASS",
+      "durationMs": 202
+    },
+    {
+      "id": "QA29",
+      "name": "Id vacío",
+      "expected": "Aviso accesible, campos/guardar bloqueados y retorno al listado.",
+      "result": "PASS",
+      "durationMs": 218
+    },
+    {
+      "id": "QA30",
+      "name": "HTML literal en listado y formulario",
+      "expected": "Los datos se muestran como texto sin crear elementos HTML.",
+      "result": "PASS",
+      "durationMs": 223
+    },
+    {
+      "id": "QA31",
+      "name": "Recuperación explícita de datos corruptos",
+      "expected": "Cancelar conserva el valor; confirmar respalda y vacía sin aviso residual.",
+      "result": "FAIL",
+      "detail": "Expected values to be strictly equal:\n\nfalse !== true\n",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "durationMs": 224
+    },
+    {
+      "id": "QA32",
+      "name": "Fallo al guardar y reintento",
+      "expected": "Muestra un error, conserva los datos y permite guardar después.",
+      "result": "PASS",
+      "durationMs": 268
+    },
+    {
+      "id": "QA33",
+      "name": "Recorrido de teclado del formulario",
+      "expected": "Recorre nombre, descripción, estado, cancelar y guardar con Enter.",
+      "result": "PASS",
+      "durationMs": 242
+    },
+    {
+      "id": "QA34",
+      "name": "Menú móvil, Escape y navegación",
+      "expected": "A 375 px abre/cierra, devuelve foco y navega a especialidades.",
+      "result": "PASS",
+      "durationMs": 371
+    },
+    {
+      "id": "QA35",
+      "name": "Formulario móvil 375 px",
+      "expected": "Campos/botones accesibles y sin desborde, también con errores.",
+      "result": "PASS",
+      "durationMs": 285
+    },
+    {
+      "id": "QA36",
+      "name": "Listado móvil y tabla desplazable",
+      "expected": "La tabla usa desplazamiento propio, sin desbordar la página.",
+      "result": "PASS",
+      "durationMs": 223
+    },
+    {
+      "id": "QA37",
+      "name": "Escritorio y módulos futuros",
+      "expected": "Sidebar visible, botón móvil oculto y módulos futuros deshabilitados.",
+      "result": "PASS",
+      "durationMs": 177
+    }
+  ]
+}
