@@ -10,8 +10,8 @@ Repositorio: [emiliolj1/dsw2026-ej22-56019-56381](https://github.com/emiliolj1/d
 | --- | --- | --- |
 | Emilio Luna Jandar | [emiliolj1](https://github.com/emiliolj1) | U01 base visual, U04 navegación y U09 cierre visual |
 | Carlos Facundo López | [cfacundo7](https://github.com/cfacundo7) | U02 login/sesión y U05 panel |
-| Lucas | [lucas33-dev](https://github.com/lucas33-dev) | U03 store/persistencia y U07 listado/búsqueda/eliminación |
-| Matías Ignacio Ferreyra (Nacho) | [NachoF1390](https://github.com/NachoF1390) | U06 formulario y U08 pruebas/documentación |
+| Lucas Tomas Ferreyra | [lucas33-dev](https://github.com/lucas33-dev) | U03 store/persistencia y U07 listado/búsqueda/eliminación |
+| Matías Ignacio Ferreyra | [NachoF1390](https://github.com/NachoF1390) | U06 formulario y U08 pruebas/documentación |
 
 Los cuatro aportes están identificados en los PR integrados #1 a #7. El [registro de integración](docs/evidencias-u08/pr-integrados.json) conserva sus autores, ramas y commits de merge. Completar el nombre completo de Lucas con el dato del equipo antes de la presentación académica; su cuenta identifica el aporte real. La revisión manual U09 fue realizada por Emilio sobre el commit 8bac764, con resultados correctos en escritorio, móvil emulado a 375 px y recorrido desde una sesión nueva. El registro está en [U09](docs/u09-cierre.md); quedan pendientes la revisión del Integrante 4 y la integración del PR de cierre.
 
