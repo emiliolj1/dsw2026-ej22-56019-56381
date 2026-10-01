@@ -13,7 +13,7 @@ Repositorio: [emiliolj1/dsw2026-ej22-56019-56381](https://github.com/emiliolj1/d
 | Lucas | [lucas33-dev](https://github.com/lucas33-dev) | U03 store/persistencia y U07 listado/búsqueda/eliminación |
 | Matías Ignacio Ferreyra (Nacho) | [NachoF1390](https://github.com/NachoF1390) | U06 formulario y U08 pruebas/documentación |
 
-Los cuatro aportes están identificados en los PR integrados #1 a #7. El [registro de integración](docs/evidencias-u08/pr-integrados.json) conserva sus autores, ramas y commits de merge. Completar el nombre completo de Lucas con el dato del equipo antes de la presentación académica; su cuenta identifica el aporte real. U09 corresponde a la revisión final de Emilio y no se presenta como ya aprobada.
+Los cuatro aportes están identificados en los PR integrados #1 a #7. El [registro de integración](docs/evidencias-u08/pr-integrados.json) conserva sus autores, ramas y commits de merge. Completar el nombre completo de Lucas con el dato del equipo antes de la presentación académica; su cuenta identifica el aporte real. La revisión manual U09 fue realizada por Emilio sobre el commit 8bac764, con resultados correctos en escritorio, móvil emulado a 375 px y recorrido desde una sesión nueva. El registro está en [U09](docs/u09-cierre.md); quedan pendientes la revisión del Integrante 4 y la integración del PR de cierre.
 
 ## Ejecutar el proyecto
 
@@ -110,4 +110,8 @@ La suite inicia su propio servidor y usa contextos nuevos, acceso con el login r
 
 ## Integración de U08
 
-La documentación y las correcciones se proponen en `docs/u4-entrega-y-pruebas`, con PR a `development`. Emilio revisa U08; Lucas debe revisar los ajustes puntuales del listado. Tras esa revisión, las evidencias sirven para U09. La rama main se mantiene bajo la decisión de cierre del equipo.
+U08 fue integrado en development mediante el [PR #8](https://github.com/emiliolj1/dsw2026-ej22-56019-56381/pull/8).
+Incluye documentación, evidencias y correcciones del listado.
+
+La revisión final se registra en [U09](docs/u09-cierre.md).
+El PR de cierre requiere revisión del Integrante 4 e integración en development. La decisión sobre main corresponde al equipo.
