@@ -126,7 +126,7 @@ function handleSubmit(event) {
 }
 
 if (requireSession()) {
-  // Firma propuesta de U04; confirmar con el Integrante 1 antes de integrar.
+  // Contrato del shell compartido de U04, integrado en development.
   renderShell({ activePage: 'specialties' });
   page.hidden = false;
   loadForm();

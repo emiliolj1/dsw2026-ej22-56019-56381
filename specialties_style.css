@@ -1,3 +1,8 @@
+.sp-page[hidden],
+.sp-page [hidden] {
+  display: none;
+}
+
 .sp-page {
   padding: clamp(1rem, 2vw, 2rem) 0 3rem;
 }

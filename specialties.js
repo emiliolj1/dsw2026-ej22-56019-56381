@@ -17,9 +17,6 @@ const prevBtn = $('prev-btn');
 const nextBtn = $('next-btn');
 const searchInput = $('search-input');
 
-requireSession();
-renderShell({ activePage: 'specialties' });
-
 function el(tag, className, text) {
   const node = document.createElement(tag);
   if (className) node.className = className;
@@ -161,24 +158,29 @@ function handleDelete(item) {
   renderList();
 }
 
-searchInput.addEventListener('input', () => renderList(searchInput.value));
-$('search-form').addEventListener('submit', (event) => {
-  event.preventDefault();
-  renderList(searchInput.value);
-});
-prevBtn.addEventListener('click', () => {
-  currentPage -= 1;
-  renderList();
-});
-nextBtn.addEventListener('click', () => {
-  currentPage += 1;
-  renderList();
-});
+if (requireSession()) {
+  renderShell({ activePage: 'specialties' });
+  $('main-content').hidden = false;
 
-const params = new URLSearchParams(location.search);
-if (params.get('saved') === '1') {
-  showNotice('Especialidad guardada correctamente.');
-  history.replaceState(null, '', location.pathname);
+  searchInput.addEventListener('input', () => renderList(searchInput.value));
+  $('search-form').addEventListener('submit', (event) => {
+    event.preventDefault();
+    renderList(searchInput.value);
+  });
+  prevBtn.addEventListener('click', () => {
+    currentPage -= 1;
+    renderList();
+  });
+  nextBtn.addEventListener('click', () => {
+    currentPage += 1;
+    renderList();
+  });
+
+  const params = new URLSearchParams(location.search);
+  if (params.get('saved') === '1') {
+    showNotice('Especialidad guardada correctamente.');
+    history.replaceState(null, '', location.pathname);
+  }
+
+  renderList('');
 }
-
-renderList('');
